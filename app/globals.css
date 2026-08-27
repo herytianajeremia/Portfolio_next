@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 216 65% 11%;
+    --foreground: 222 47% 86%;
+
+    --card: 216 45% 13%;
+    --card-foreground: 222 47% 86%;
+
+    --primary: 166 100% 70%;
+    --primary-foreground: 218 80% 8%;
+
+    --secondary: 216 40% 16%;
+    --secondary-foreground: 222 47% 86%;
+
+    --muted: 216 30% 18%;
+    --muted-foreground: 224 20% 64%;
+
+    --accent: 166 100% 70%;
+    --accent-foreground: 218 80% 8%;
+
+    --border: 216 28% 22%;
+    --input: 216 28% 22%;
+    --ring: 166 100% 70%;
+
+    --radius: 0.9rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    background-image:
+      radial-gradient(60rem 40rem at 50% -10%, hsl(166 100% 70% / 0.06), transparent),
+      radial-gradient(50rem 40rem at 100% 20%, hsl(255 60% 60% / 0.05), transparent);
+    background-attachment: fixed;
+    font-feature-settings: "ss01", "cv01";
+  }
+
+  ::selection {
+    @apply bg-primary/25 text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-[#8b7dff] bg-clip-text text-transparent;
+  }
+}
+
+/* Slim, themed scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(216 65% 9%);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(216 25% 28%);
+  border-radius: 999px;
+  border: 2px solid hsl(216 65% 9%);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(166 60% 45%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
