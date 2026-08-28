@@ -197,7 +197,6 @@ export const projects: Project[] = [
     name: "Web studio",
     category: "design",
     image: "/img/img-projet/meb-studio.png",
-    url: "https://www.figma.com/proto/QsDp9Is3a3Wz0IhhFSs6Bd/Meb?node-id=49-344&t=5q55nYL1WGXoVljV-0&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=49%3A344",
     url: "https://mebstudio.mg/",
     tags: ["Figma", "Web Design"],
     desc: {
@@ -210,7 +209,7 @@ export const projects: Project[] = [
     name: "Web Design",
     category: "design",
     image: "/img/img-projet/mangabay.png",
-    url: "https://https://mangabaylodge.com/fr/",
+    url: "https://mangabaylodge.com/fr/",
     tags: ["Figma", "Web Design"],
     desc: {
       fr: "Maquette Figma complète du site Meb Studio.",
