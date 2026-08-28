@@ -9,5 +9,4 @@ const nextConfig = {
     unoptimized: true,
   },
 };
-
 export default nextConfig;
