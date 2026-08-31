@@ -5,6 +5,29 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# Clean URLs for the one-page sections: serve the app for these paths so a direct
+# visit or reload works; client-side JS then scrolls to the matching section.
+[[redirects]]
+  from = "/home"
+  to = "/index.html"
+  status = 200
+[[redirects]]
+  from = "/about"
+  to = "/index.html"
+  status = 200
+[[redirects]]
+  from = "/services"
+  to = "/index.html"
+  status = 200
+[[redirects]]
+  from = "/work"
+  to = "/index.html"
+  status = 200
+[[redirects]]
+  from = "/contact"
+  to = "/index.html"
+  status = 200
+
 [[headers]]
   for = "/*"
   [headers.values]

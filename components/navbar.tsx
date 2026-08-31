@@ -13,9 +13,14 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { profile } from "@/lib/data";
-import { cn } from "@/lib/utils";
-
-const SECTION_IDS = ["home", "about", "services", "work", "contact"] as const;
+import {
+  cn,
+  navigateToSection,
+  pathToSection,
+  scrollToId,
+  sectionToPath,
+  SECTION_IDS,
+} from "@/lib/utils";
 
 export function Navbar() {
   const { t } = useLanguage();
@@ -47,7 +52,14 @@ export function Navbar() {
         const visible = entries
           .filter((e) => e.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible) setActive(visible.target.id);
+        if (visible) {
+          setActive(visible.target.id);
+          // Keep the URL in sync with the visible section (clean path, no #).
+          const path = sectionToPath(visible.target.id);
+          if (window.location.pathname !== path) {
+            window.history.replaceState(null, "", path);
+          }
+        }
       },
       { rootMargin: "-45% 0px -45% 0px", threshold: [0, 0.25, 0.5] },
     );
@@ -55,12 +67,24 @@ export function Navbar() {
     return () => observer.disconnect();
   }, []);
 
-  const scrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    if (!el) return;
-    const top = el.getBoundingClientRect().top + window.scrollY - 72;
-    window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
-  };
+  // Clean-URL routing: scroll to the section named in the URL on first load,
+  // and on browser back/forward.
+  useEffect(() => {
+    const initial = pathToSection(window.location.pathname);
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    if (initial !== "home") {
+      timer = setTimeout(() => scrollToId(initial, false), 80);
+    }
+    const onPop = () =>
+      scrollToId(pathToSection(window.location.pathname), false);
+    window.addEventListener("popstate", onPop);
+    return () => {
+      if (timer) clearTimeout(timer);
+      window.removeEventListener("popstate", onPop);
+    };
+  }, []);
+
+  const scrollTo = (id: string) => navigateToSection(id);
 
   return (
     <header

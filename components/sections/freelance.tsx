@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
 import { Reveal } from "@/components/reveal";
 import { Button } from "@/components/ui/button";
-import { scrollToId } from "@/lib/utils";
+import { navigateToSection } from "@/lib/utils";
 
 export function Freelance() {
   const { t } = useLanguage();
@@ -27,7 +27,7 @@ export function Freelance() {
                 href="#contact"
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToId("contact");
+                  navigateToSection("contact");
                 }}
               >
                 {t.freelance.cta}

@@ -6,7 +6,7 @@ import { ArrowUp } from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
 import { SocialGlyph } from "@/components/icons";
 import { profile, socials } from "@/lib/data";
-import { cn } from "@/lib/utils";
+import { cn, navigateToSection } from "@/lib/utils";
 
 export function Footer() {
   const { t } = useLanguage();
@@ -26,12 +26,7 @@ export function Footer() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const scrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    if (!el) return;
-    const top = el.getBoundingClientRect().top + window.scrollY - 72;
-    window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
-  };
+  const scrollTo = (id: string) => navigateToSection(id);
 
   const year = 2025;
 
