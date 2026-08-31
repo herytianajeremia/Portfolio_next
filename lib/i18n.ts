@@ -119,7 +119,7 @@ export const dictionaries: Record<Locale, Dict> = {
       role: "Web Designer • UI/UX • Front-end",
       stats: [
         { value: 15, suffix: "+", label: "Projets livrés" },
-        { value: 90, suffix: "+", label: "Clients satisfaits" },
+        { value: 12, suffix: "+", label: "Clients satisfaits" },
         { value: 95, suffix: "%", label: "Avis positifs" },
       ],
       skillsTitle: "Compétences",
@@ -232,7 +232,7 @@ export const dictionaries: Record<Locale, Dict> = {
       role: "Web Designer • UI/UX • Front-end",
       stats: [
         { value: 15, suffix: "+", label: "Projects delivered" },
-        { value: 90, suffix: "+", label: "Happy clients" },
+        { value: 12, suffix: "+", label: "Happy clients" },
         { value: 95, suffix: "%", label: "Positive reviews" },
       ],
       skillsTitle: "Skills",
