@@ -103,6 +103,14 @@ export function Footer() {
                   {profile.phone}
                 </a>
               </li>
+              <li>
+                <a
+                  href={`tel:+${profile.phoneCallRaw}`}
+                  className="transition-colors hover:text-primary"
+                >
+                  {profile.phoneCall}
+                </a>
+              </li>
               <li>{t.about.location}</li>
             </ul>
           </div>
