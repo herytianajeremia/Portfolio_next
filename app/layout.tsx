@@ -10,7 +10,7 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-const siteUrl = "https://heritiana-jeremia.netlify.app";
+const siteUrl = "https://jeremiaheritiana.netlify.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

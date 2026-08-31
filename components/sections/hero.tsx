@@ -8,6 +8,7 @@ import { useLanguage } from "@/components/language-provider";
 import { Button } from "@/components/ui/button";
 import { SocialGlyph } from "@/components/icons";
 import { profile, socials } from "@/lib/data";
+import { scrollToId } from "@/lib/utils";
 
 function useTypewriter(words: string[]) {
   const [text, setText] = useState("");
@@ -114,7 +115,15 @@ export function Hero() {
               </a>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <a href="#contact">{t.hero.ctaContact}</a>
+              <a
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToId("contact");
+                }}
+              >
+                {t.hero.ctaContact}
+              </a>
             </Button>
           </div>
 
