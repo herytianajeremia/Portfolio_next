@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Download } from "lucide-react";
+import { Eye } from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
 import { Button } from "@/components/ui/button";
 import { SocialGlyph } from "@/components/icons";
@@ -108,8 +108,8 @@ export function Hero() {
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Button asChild size="lg">
-              <a href={profile.cv} download>
-                <Download className="h-4 w-4" />
+              <a href={profile.cv} target="_blank" rel="noopener noreferrer">
+                <Eye className="h-4 w-4" />
                 {t.hero.ctaCv}
               </a>
             </Button>

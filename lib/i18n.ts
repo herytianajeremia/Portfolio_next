@@ -104,7 +104,7 @@ export const dictionaries: Record<Locale, Dict> = {
       ],
       description:
         "Je conçois et j'intègre des interfaces web modernes, rapides et accessibles — de la maquette Figma jusqu'au code, avec un souci constant du détail et de la performance.",
-      ctaCv: "Télécharger mon CV",
+      ctaCv: "Voir mon CV",
       ctaContact: "Discutons de votre projet",
       available: "Disponible pour de nouveaux projets",
       scroll: "Faites défiler",
@@ -118,7 +118,7 @@ export const dictionaries: Record<Locale, Dict> = {
       location: "Antananarivo, Madagascar",
       role: "Web Designer • UI/UX • Front-end",
       stats: [
-        { value: 100, suffix: "+", label: "Projets livrés" },
+        { value: 15, suffix: "+", label: "Projets livrés" },
         { value: 90, suffix: "+", label: "Clients satisfaits" },
         { value: 95, suffix: "%", label: "Avis positifs" },
       ],
@@ -217,7 +217,7 @@ export const dictionaries: Record<Locale, Dict> = {
       ],
       description:
         "I design and build modern, fast and accessible web interfaces — from Figma mockups to clean code, with a constant eye for detail and performance.",
-      ctaCv: "Download my CV",
+      ctaCv: "View my CV",
       ctaContact: "Let's talk about your project",
       available: "Available for new projects",
       scroll: "Scroll",
@@ -231,7 +231,7 @@ export const dictionaries: Record<Locale, Dict> = {
       location: "Antananarivo, Madagascar",
       role: "Web Designer • UI/UX • Front-end",
       stats: [
-        { value: 100, suffix: "+", label: "Projects delivered" },
+        { value: 15, suffix: "+", label: "Projects delivered" },
         { value: 90, suffix: "+", label: "Happy clients" },
         { value: 95, suffix: "%", label: "Positive reviews" },
       ],
