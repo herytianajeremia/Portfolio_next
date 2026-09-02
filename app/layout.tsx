@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/components/language-provider";
+import { ThemeProvider, themeInitScript } from "@/components/theme-provider";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -61,6 +62,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
+  // Updated at runtime by the theme provider when the visitor switches themes.
   themeColor: "#0a192f",
   width: "device-width",
   initialScale: 1,
@@ -72,9 +74,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr" className={spaceGrotesk.variable} suppressHydrationWarning>
+    <html
+      lang="fr"
+      className={`${spaceGrotesk.variable} dark`}
+      suppressHydrationWarning
+    >
+      <head>
+        {/* Resolve the theme before first paint to avoid a flash of the wrong one. */}
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body>
-        <LanguageProvider>{children}</LanguageProvider>
+        <ThemeProvider>
+          <LanguageProvider>{children}</LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

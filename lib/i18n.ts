@@ -11,6 +11,8 @@ type Dict = {
     work: string;
     contact: string;
     cta: string;
+    themeLight: string;
+    themeDark: string;
   };
   hero: {
     greeting: string;
@@ -93,6 +95,8 @@ export const dictionaries: Record<Locale, Dict> = {
       work: "Réalisations",
       contact: "Contact",
       cta: "Me contacter",
+      themeLight: "Passer en mode clair",
+      themeDark: "Passer en mode sombre",
     },
     hero: {
       greeting: "Bonjour, je suis",
@@ -206,6 +210,8 @@ export const dictionaries: Record<Locale, Dict> = {
       work: "Work",
       contact: "Contact",
       cta: "Get in touch",
+      themeLight: "Switch to light mode",
+      themeDark: "Switch to dark mode",
     },
     hero: {
       greeting: "Hi, I'm",

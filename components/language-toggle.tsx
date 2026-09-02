@@ -10,7 +10,7 @@ export function LanguageToggle({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "relative inline-flex items-center rounded-full border border-white/10 bg-white/[0.03] p-0.5 text-xs font-semibold",
+        "relative inline-flex items-center rounded-full border border-border bg-foreground/[0.03] p-0.5 text-xs font-semibold",
         className,
       )}
       role="group"

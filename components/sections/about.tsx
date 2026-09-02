@@ -47,9 +47,9 @@ function SkillBar({ name, value }: { name: string; value: number }) {
         <span className="font-medium text-foreground">{name}</span>
         <span className="text-muted-foreground">{value}%</span>
       </div>
-      <div className="h-2 overflow-hidden rounded-full bg-white/[0.06]">
+      <div className="h-2 overflow-hidden rounded-full bg-foreground/[0.06]">
         <motion.div
-          className="h-full rounded-full bg-gradient-to-r from-primary to-[#6c5ce7]"
+          className="h-full rounded-full bg-gradient-to-r from-primary to-brand-violet"
           initial={{ width: 0 }}
           whileInView={{ width: `${value}%` }}
           viewport={{ once: true, margin: "-40px" }}
@@ -77,7 +77,7 @@ export function About() {
           <Reveal className="lg:col-span-3" delay={0.05}>
             <Card className="h-full p-6 sm:p-8">
               <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
-                <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-2xl border border-white/10">
+                <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-2xl border border-border">
                   <Image
                     src={profile.aboutImage}
                     alt={profile.name}
@@ -108,7 +108,7 @@ export function About() {
                 {t.about.stats.map((s) => (
                   <div
                     key={s.label}
-                    className="rounded-xl border border-white/10 bg-white/[0.02] p-4 text-center"
+                    className="rounded-xl border border-border bg-foreground/[0.02] p-4 text-center"
                   >
                     <Counter value={s.value} suffix={s.suffix} />
                     <div className="mt-1 text-xs text-muted-foreground">
@@ -126,7 +126,7 @@ export function About() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={s.label}
-                    className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-muted-foreground transition-all hover:-translate-y-1 hover:border-primary/50 hover:text-primary"
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-all hover:-translate-y-1 hover:border-primary/50 hover:text-primary"
                   >
                     <SocialGlyph icon={s.icon} size={16} />
                   </a>
@@ -151,7 +151,7 @@ export function About() {
                 ))}
               </div>
 
-              <div className="mt-7 border-t border-white/10 pt-5">
+              <div className="mt-7 border-t border-border pt-5">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                   {t.about.toolsTitle}
                 </p>

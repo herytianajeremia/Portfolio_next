@@ -70,7 +70,7 @@ export function Hero() {
       {/* ambient glow */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute left-1/4 top-24 h-72 w-72 rounded-full bg-primary/20 blur-[120px]" />
-        <div className="absolute bottom-10 right-1/4 h-80 w-80 rounded-full bg-[#6c5ce7]/20 blur-[130px]" />
+        <div className="absolute bottom-10 right-1/4 h-80 w-80 rounded-full bg-brand-violet/20 blur-[130px]" />
       </div>
 
       <div className="container grid items-center gap-12 lg:grid-cols-2">
@@ -93,7 +93,7 @@ export function Hero() {
             {t.hero.greeting}
           </p>
           <h1 className="mt-1 text-4xl font-extrabold uppercase tracking-tight sm:text-5xl lg:text-6xl">
-            <span className="text-transparent [-webkit-text-stroke:2px_hsl(var(--primary))] [filter:drop-shadow(0_0_20px_rgba(100,255,218,0.35))]">
+            <span className="text-transparent [-webkit-text-stroke:2px_hsl(var(--primary))] [filter:drop-shadow(0_0_20px_hsl(var(--primary)/0.35))]">
               {profile.name}
             </span>
           </h1>
@@ -135,7 +135,7 @@ export function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={s.label}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-muted-foreground transition-all hover:-translate-y-1 hover:border-primary/50 hover:text-primary"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-foreground/[0.03] text-muted-foreground transition-all hover:-translate-y-1 hover:border-primary/50 hover:text-primary"
               >
                 <SocialGlyph icon={s.icon} size={18} />
               </a>
@@ -152,7 +152,7 @@ export function Hero() {
         >
           <div className="relative aspect-square w-[260px] sm:w-[340px] lg:w-[400px]">
             {/* soft outer aura */}
-            <div className="pointer-events-none absolute -inset-3 rounded-full bg-gradient-to-tr from-primary/25 via-transparent to-[#8b7dff]/25 blur-2xl" />
+            <div className="pointer-events-none absolute -inset-3 rounded-full bg-gradient-to-tr from-primary/25 via-transparent to-brand-violet/25 blur-2xl" />
 
             {/* rotating conic-gradient ring */}
             <div
@@ -167,11 +167,11 @@ export function Hero() {
             />
 
             {/* faint dashed ring for depth */}
-            <div className="pointer-events-none absolute inset-[6px] rounded-full border border-dashed border-white/10" />
+            <div className="pointer-events-none absolute inset-[6px] rounded-full border border-dashed border-border" />
 
             {/* floating accent dots */}
-            <div className="pointer-events-none absolute right-3 top-8 h-2 w-2 animate-float rounded-full bg-primary shadow-[0_0_12px_rgba(100,255,218,0.8)]" />
-            <div className="pointer-events-none absolute bottom-10 left-2 h-1.5 w-1.5 animate-float rounded-full bg-[#8b7dff] shadow-[0_0_12px_rgba(139,125,255,0.8)] [animation-delay:1.5s]" />
+            <div className="pointer-events-none absolute right-3 top-8 h-2 w-2 animate-float rounded-full bg-primary shadow-[0_0_12px_hsl(var(--primary)/0.8)]" />
+            <div className="pointer-events-none absolute bottom-10 left-2 h-1.5 w-1.5 animate-float rounded-full bg-brand-violet shadow-[0_0_12px_hsl(var(--brand-violet)/0.8)] [animation-delay:1.5s]" />
 
             {/* orbiting glass icons — placed ON the ring (translate kept separate from the
                 rotation), counter-rotated to stay upright, pause on hover, hidden on mobile */}
@@ -187,7 +187,7 @@ export function Hero() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={s.label}
-                      className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/10 text-primary shadow-lg backdrop-blur-md transition-transform duration-300 hover:scale-110 hover:border-primary/60 hover:text-primary"
+                      className="flex h-12 w-12 items-center justify-center rounded-full border border-border bg-foreground/10 text-primary shadow-lg backdrop-blur-md transition-transform duration-300 hover:scale-110 hover:border-primary/60 hover:text-primary"
                     >
                       <SocialGlyph icon={s.icon} size={20} />
                     </a>
@@ -197,7 +197,7 @@ export function Hero() {
             </div>
 
             {/* photo */}
-            <div className="absolute inset-8 overflow-hidden rounded-full border border-white/10 bg-[#0b1327] shadow-2xl shadow-primary/10">
+            <div className="absolute inset-8 overflow-hidden rounded-full border border-border bg-card shadow-2xl shadow-primary/10">
               <Image
                 src={profile.heroImage}
                 alt={profile.name}
@@ -217,7 +217,7 @@ export function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={s.label}
-                className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-primary shadow-lg transition-transform active:scale-90"
+                className="flex h-14 w-14 items-center justify-center rounded-2xl border border-border bg-foreground/[0.04] text-primary shadow-lg transition-transform active:scale-90"
               >
                 <SocialGlyph icon={s.icon} size={24} />
               </a>

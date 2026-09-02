@@ -53,7 +53,7 @@ export function Work() {
       type="button"
       onClick={() => setSelected(p)}
       aria-label={`${p.name} — ${t.work.visit}`}
-      className="group/card relative w-[280px] shrink-0 overflow-hidden rounded-2xl border border-white/10 bg-card text-left transition-colors hover:border-primary/40 sm:w-[320px]"
+      className="group/card relative w-[280px] shrink-0 overflow-hidden rounded-2xl border border-border bg-card text-left transition-colors hover:border-primary/40 sm:w-[320px]"
     >
       <div className="relative aspect-[4/3] overflow-hidden">
         <Image
@@ -63,7 +63,7 @@ export function Work() {
           sizes="320px"
           className="object-cover object-top transition-transform duration-500 group-hover/card:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/90 via-[#020617]/20 to-transparent opacity-70 transition-opacity duration-300 group-hover/card:opacity-90" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-70 transition-opacity duration-300 group-hover/card:opacity-90" />
         <div className="absolute left-3 top-3">
           <Badge variant={p.category === "design" ? "default" : "solid"}>
             {p.category === "design" ? t.work.badgeDesign : t.work.badgeDev}
@@ -106,7 +106,7 @@ export function Work() {
                   "rounded-full border px-5 py-2 text-sm font-medium transition-all",
                   filter === f.key
                     ? "border-primary bg-primary/15 text-primary"
-                    : "border-white/10 text-muted-foreground hover:border-white/25 hover:text-foreground",
+                    : "border-border text-muted-foreground hover:border-foreground/25 hover:text-foreground",
                 )}
               >
                 {f.label}
@@ -140,7 +140,7 @@ export function Work() {
         <DialogContent className="max-w-3xl p-0">
           {selected && (
             <div className="flex flex-col">
-              <DialogHeader className="border-b border-white/10 p-5">
+              <DialogHeader className="border-b border-border p-5">
                 <div className="flex items-center gap-2">
                   <DialogTitle>{selected.name}</DialogTitle>
                   <Badge
@@ -154,7 +154,7 @@ export function Work() {
                 <DialogDescription>{selected.desc[locale]}</DialogDescription>
               </DialogHeader>
 
-              <div className="relative aspect-video w-full bg-[#020617]">
+              <div className="relative aspect-video w-full bg-secondary">
                 {previewUrl ? (
                   <iframe
                     src={previewUrl}
@@ -180,7 +180,7 @@ export function Work() {
                 )}
               </div>
 
-              <div className="flex flex-wrap items-center justify-between gap-3 border-t border-white/10 p-5">
+              <div className="flex flex-wrap items-center justify-between gap-3 border-t border-border p-5">
                 <div className="flex flex-wrap gap-1.5">
                   {selected.tags.map((tag) => (
                     <Badge key={tag} variant="outline">

@@ -42,6 +42,9 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        brand: {
+          violet: "hsl(var(--brand-violet))",
+        },
       },
       fontFamily: {
         sans: ["var(--font-space-grotesk)", "system-ui", "sans-serif"],
@@ -53,7 +56,7 @@ const config: Config = {
       },
       backgroundImage: {
         "grid-glow":
-          "radial-gradient(circle at 50% 0%, rgba(100,255,218,0.08), transparent 60%)",
+          "radial-gradient(circle at 50% 0%, hsl(var(--primary) / 0.08), transparent 60%)",
       },
       keyframes: {
         "accordion-down": {

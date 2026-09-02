@@ -13,9 +13,9 @@ export function Freelance() {
     <section className="py-16">
       <div className="container">
         <Reveal>
-          <div className="relative overflow-hidden rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/10 via-[#0b1327] to-[#6c5ce7]/10 px-6 py-14 text-center sm:px-12">
+          <div className="relative overflow-hidden rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/10 via-card to-brand-violet/10 px-6 py-14 text-center sm:px-12">
             <div className="pointer-events-none absolute -left-10 top-0 h-40 w-40 rounded-full bg-primary/20 blur-3xl" />
-            <div className="pointer-events-none absolute -right-10 bottom-0 h-40 w-40 rounded-full bg-[#6c5ce7]/20 blur-3xl" />
+            <div className="pointer-events-none absolute -right-10 bottom-0 h-40 w-40 rounded-full bg-brand-violet/20 blur-3xl" />
             <p className="text-sm font-medium uppercase tracking-widest text-primary">
               {t.freelance.kicker}
             </p>

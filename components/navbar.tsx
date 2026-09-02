@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Menu, Phone } from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
 import { LanguageToggle } from "@/components/language-toggle";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -91,7 +92,7 @@ export function Navbar() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "border-b border-white/10 bg-[#0a192f]/85 backdrop-blur-xl"
+          ? "border-b border-border bg-background/85 backdrop-blur-xl"
           : "border-b border-transparent bg-transparent",
       )}
     >
@@ -132,6 +133,7 @@ export function Navbar() {
         </ul>
 
         <div className="flex items-center gap-2">
+          <ThemeToggle />
           <LanguageToggle />
           <Button asChild size="sm" className="hidden sm:inline-flex">
             <a
@@ -156,7 +158,7 @@ export function Navbar() {
               </Button>
             </DialogTrigger>
             <DialogContent
-              className="left-auto right-0 top-0 h-full max-w-xs translate-x-0 translate-y-0 rounded-none border-l border-white/10 data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:rounded-none"
+              className="left-auto right-0 top-0 h-full max-w-xs translate-x-0 translate-y-0 rounded-none border-l border-border data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:rounded-none"
               hideClose
             >
               <DialogTitle className="sr-only">Menu</DialogTitle>
@@ -172,13 +174,17 @@ export function Navbar() {
                       "rounded-xl px-4 py-3 text-left text-base font-medium transition-colors",
                       active === link.id
                         ? "bg-primary/10 text-primary"
-                        : "text-foreground hover:bg-white/5",
+                        : "text-foreground hover:bg-foreground/5",
                     )}
                   >
                     {link.label}
                   </button>
                 ))}
-                <Button asChild className="mt-4" onClick={() => setOpen(false)}>
+                <div className="mt-4 flex items-center gap-2 border-t border-border pt-4">
+                  <ThemeToggle />
+                  <LanguageToggle />
+                </div>
+                <Button asChild className="mt-3" onClick={() => setOpen(false)}>
                   <a
                     href={`tel:+${profile.phoneCallRaw}`}
                     aria-label={`${t.nav.cta} — ${profile.phoneCall}`}

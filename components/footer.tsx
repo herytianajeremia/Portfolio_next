@@ -31,7 +31,7 @@ export function Footer() {
   const year = 2025;
 
   return (
-    <footer className="border-t border-white/10 bg-[#081426]">
+    <footer className="border-t border-border bg-card">
       <div className="container py-14">
         <div className="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr]">
           <div>
@@ -56,7 +56,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-muted-foreground transition-all hover:-translate-y-1 hover:border-primary/50 hover:text-primary"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-all hover:-translate-y-1 hover:border-primary/50 hover:text-primary"
                 >
                   <SocialGlyph icon={s.icon} size={16} />
                 </a>
@@ -116,7 +116,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-white/10 pt-6 text-center">
+        <div className="mt-12 border-t border-border pt-6 text-center">
           <p className="text-sm text-muted-foreground">
             © {year} {profile.fullName}. {t.footer.rights}
           </p>
