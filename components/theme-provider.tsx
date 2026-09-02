@@ -41,13 +41,26 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setThemeState] = useState<Theme>("dark");
   const [ready, setReady] = useState(false);
 
-  // Read what the pre-paint script already resolved, so we never fight it,
-  // then re-apply so the pieces the script cannot reach (the <meta> tag Next
-  // renders after it) match too.
+  // Re-resolve from the stored choice once mounted, and re-apply it. Reading
+  // storage rather than the current <html> class matters: hydration can restore
+  // the class baked into the static HTML over what the pre-paint script set, so
+  // the DOM is not a reliable source of truth here. This also covers what the
+  // script cannot reach — the <meta name="theme-color"> Next renders after it.
   useEffect(() => {
-    const resolved: Theme = document.documentElement.classList.contains("dark")
-      ? "dark"
-      : "light";
+    let resolved: Theme;
+    try {
+      const stored = window.localStorage.getItem(THEME_STORAGE_KEY);
+      resolved =
+        stored === "light" || stored === "dark"
+          ? stored
+          : window.matchMedia("(prefers-color-scheme: light)").matches
+            ? "light"
+            : "dark";
+    } catch {
+      resolved = document.documentElement.classList.contains("dark")
+        ? "dark"
+        : "light";
+    }
     setThemeState(resolved);
     applyTheme(resolved);
     setReady(true);
